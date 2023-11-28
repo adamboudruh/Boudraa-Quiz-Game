@@ -9,20 +9,26 @@
   </head>
   
   <body>
-        <div class="container position-absolute top-50 start-50 translate-middle text-center" style="display: none;">
+    <header>
+        <p id="score">Score: </p>
+    </header>
+    <main>
+        <div class="container position-absolute top-50 start-50 translate-middle text-center" id="welcome-page" style="display: block;">
             <h1>Coding Quiz Challenge</h1>
             <p>To begin the challenge, click the begin button below. Your score will be how many questions you get right out of 4.</p>
-            <button type="button" class="begin btn btn-primary"> Begin quiz </button>
+            <button type="button" class="begin btn btn-primary" id="begin"> Begin quiz </button>
         </div>
-        <div class="container position-absolute top-50 start-50 translate-middle text-center" id="question-container" style="display: block;">
+        <div class="container position-absolute top-50 start-50 translate-middle text-center" id="question-container" style="display: none;">
             <h2>How old am I?</h2>
             <ul class="list-group" id="questions">
-                <li><button class="list-group-item btn btn-outline-primary btn-lg" id="option1">I am 19 years old</button></li>
-                <li><button class="list-group-item btn btn-outline-primary btn-lg" id="option2">18</button></li>
-                <li><button class="list-group-item btn btn-outline-primary btn-lg" id="option3">20</button></li>
-                <li><button class="list-group-item btn btn-outline-primary btn-lg" id="option4">22</button></li>
+                <li><button class="list-group-item btn btn-outline-primary btn-lg incorrect" id="option1">I am 19 years old</button></li>
+                <li><button class="list-group-item btn btn-outline-primary btn-lg incorrect" id="option2">18</button></li>
+                <li><button class="list-group-item btn btn-outline-primary btn-lg correct" id="option3">20</button></li>
+                <li><button class="list-group-item btn btn-outline-primary btn-lg incorrect" id="option4">22</button></li>
             </ul>
-        </div>
+        </div>    
+    </main>
+        
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="./assets/script.js"></script>
   </body>

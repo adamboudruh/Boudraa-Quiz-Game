@@ -70,6 +70,16 @@ body {
     padding-right: 500px;
 }
 
+h2 {
+    text-decoration: underline;
+    text-align: left;
+    padding: 20px;
+}
+
+#question-container ul {
+    list-style: none;
+}
+
 #question-container button {
-    padding: 5px;
+    padding: 15px;
 }
