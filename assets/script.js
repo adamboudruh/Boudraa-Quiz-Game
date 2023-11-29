@@ -104,6 +104,7 @@ function displayQuestion(questionNum) {
     if(questionNum == 5){
         $('#form-container').attr('style', 'display: block');
         $('#question-container').attr('style', 'display: none'); 
+        $('body').attr('style', 'background-color: white');
     }
 
 }
