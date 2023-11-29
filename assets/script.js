@@ -1,9 +1,7 @@
-var highScores = [];
 questionNum = 0;
 function refreshScore() {
     $("#score").text("Time: " + secondsLeft);
 }
-
 var secondsLeft = 60;
 
 var anyOption = $('.option');
@@ -12,13 +10,19 @@ var correctID = 3;
 var wasItCorrect = true;
 var questionAnswered = false;
 
-beginButton.on('click', function() { 
+beginButton.on('click', function() {
+    $('#questionTitle').attr('style', 'color: black');
     refreshScore();
+    secondsLeft = 60;
     questionNum = 1; 
     displayQuestion(questionNum);
     var timerInterval = setInterval(function() {
         secondsLeft--;
-        if(secondsLeft === 10) console.log("10 second warning!!!!!!");
+        if(secondsLeft === 10) {
+            console.log("10 second warning!!!!!!");
+            $('#questionTitle').attr('style', 'color: red');
+        };
+
         if(secondsLeft === 0) {
             displayQuestion(5);
             clearInterval(timerInterval);
@@ -65,6 +69,7 @@ function displayQuestion(questionNum) {
             $('#2').text("18 years old");
             $('#3').text("20 years old");
             $('#4').text("22 years old");
+        $('body').attr('style', 'background-color: lightblue');
     }
     if(questionNum == 2) {
         console.log("second question");
@@ -74,6 +79,7 @@ function displayQuestion(questionNum) {
             $('#3').text("Minato");
             $('#4').text("Kakashi");
         correctID = 1;
+        $('body').attr('style', 'background-color: lightgoldenrodyellow');
     }
     if(questionNum == 3) {
         console.log("third question");
@@ -83,6 +89,7 @@ function displayQuestion(questionNum) {
             $('#3').text("In the second fight against count dooku");
             $('#4').text("In a fight against General Grievous");
         correctID = 2;
+        $('body').attr('style', 'background-color: lightseagreen');
     }
     if(questionNum == 4) {
         console.log("fourth and final question");
@@ -92,6 +99,7 @@ function displayQuestion(questionNum) {
             $('#3').text("Byron");
             $('#4').text("Ryan");
         correctID = 4;
+        $('body').attr('style', 'background-color: lightsalmon');
     }
     if(questionNum == 5){
         $('#form-container').attr('style', 'display: block');
@@ -99,90 +107,6 @@ function displayQuestion(questionNum) {
     }
 
 }
-
-
-
-
-
-// function quiz() { 
-//     console.log("first question");
-//     $('#welcome-page').attr('style', 'display: none');
-//     $('#question-container').attr('style', 'display: block');
-//     anyOption.on('click', function(){
-//         console.log("second question");
-//         $('#questionTitle').text("Who was naruto's first sensei?");
-//             $('#option1').text("Iruka");
-//             $('#option2').text("Jiraiya");
-//             $('#option3').text("Minato");
-//             $('#option4').text("Kakashi");
-//         $('#option1').removeClass('incorrect').addClass('correct');
-//         $('#option3').removeClass('correct').addClass('incorrect');
-//         $('.correct').on('click', function () { score++; refreshScore();});
-//         $('.incorrect').on('click', function () { score--; refreshScore();});
-//         anyOption.on('click', function(){
-//             console.log("third question");
-//             $('#questionTitle').text("When did Anakin lose his right arm?");
-//                 $('#option1').text("In a fight against Obi wan");
-//                 $('#option2').text("In the first fight against count dooku");
-//                 $('#option3').text("In the second fight against count dooku");
-//                 $('#option4').text("In a fight against General Grievous");
-//             $('#option1').removeClass('correct').addClass('incorrect');
-//             $('#option2').removeClass('incorrect').addClass('correct');
-//             $('.correct').on('click', function () { score++; refreshScore(); return(finalQuestion()); });
-//             $('.incorrect').on('click', function () { score--; refreshScore(); return(finalQuestion()); });
-//         });
-//     });
-// }
-
-
-// function firstQuestion() {
-//     console.log("first question");
-//     $('#welcome-page').attr('style', 'display: none');
-//     $('#question-container').attr('style', 'display: block');
-//     $('.correct').on('click', function () { refreshScore(1); secondQuestion(1); });
-//     $('.incorrect').on('click', function () { refreshScore(-1); secondQuestion(-1); });
-// }
-
-// function secondQuestion(prevScore) {
-//     console.log("second question");
-//     $('#questionTitle').text("Who was naruto's first sensei?");
-//         $('#option1').text("Iruka");
-//         $('#option2').text("Jiraiya");
-//         $('#option3').text("Minato");
-//         $('#option4').text("Kakashi");
-//     $('#option1').removeClass('incorrect').addClass('correct');
-//     $('#option3').removeClass('correct').addClass('incorrect');
-//     $('.correct').on('click', function () { refreshScore(prevScore+1); thirdQuestion(prevScore+1); });
-//     $('.incorrect').on('click', function () { refreshScore(prevScore-1); thirdQuestion(prevScore-1); });
-// }
-
-// function thirdQuestion() {
-//     refreshScore();
-//     console.log("third question");
-//     $('#questionTitle').text("When did Anakin lose his right arm?");
-//         $('#option1').text("In a fight against Obi wan");
-//         $('#option2').text("In the first fight against count dooku");
-//         $('#option3').text("In the second fight against count dooku");
-//         $('#option4').text("In a fight against General Grievous");
-//     $('#option1').removeClass('correct').addClass('incorrect');
-//     $('#option2').removeClass('incorrect').addClass('correct');
-//     $('.correct').on('click', function () { score++; refreshScore(); return(finalQuestion()); });
-//     $('.incorrect').on('click', function () { score--; refreshScore(); return(finalQuestion()); });
-// }
-
-// function finalQuestion() {
-//     refreshScore();
-//     console.log("fourth and final question");
-//     $('#questionTitle').text("Last One... What is my middle name?");
-//         $('#option1').text("Bryan");
-//         $('#option2').text("Myron");
-//         $('#option3').text("Byron");
-//         $('#option4').text("Ryan");
-//     $('#option2').removeClass('correct').addClass('incorrect');
-//     $('#option4').removeClass('incorrect').addClass('correct');
-//     $('.correct').on('click', function () { score++; return; });
-//     $('.incorrect').on('click', function () { score--; return; });
-// }
 
 
 
