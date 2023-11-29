@@ -11,6 +11,12 @@
   <body>
     <header>
         <p id="score">Score: </p>
+        <div id="highScores">
+            <p>High scores: </p>
+            <ul id="scoreList">
+                
+            </ul>
+        </div>
     </header>
     <main>
         <div class="container position-absolute top-50 start-50 translate-middle text-center" id="welcome-page" style="display: block;">
@@ -21,16 +27,20 @@
         <div class="container position-absolute top-50 start-50 translate-middle text-center" id="question-container" style="display: none;">
             <h2 id="questionTitle">How old am I?</h2>
             <ol class="list-group" id="questions">
-                <li><button class="list-group-item btn btn-outline-primary btn-lg incorrect option" id="1">I am 19 years old</button></li>
-                <li><button class="list-group-item btn btn-outline-primary btn-lg incorrect option" id="2">18</button></li>
-                <li><button class="list-group-item btn btn-outline-primary btn-lg correct option" id="3">20</button></li>
-                <li><button class="list-group-item btn btn-outline-primary btn-lg incorrect option" id="4">22</button></li>
+                <li><button class="list-group-item btn btn-outline-primary btn-lg incorrect option" id="1">19 years old</button></li>
+                <li><button class="list-group-item btn btn-outline-primary btn-lg incorrect option" id="2">18 years old</button></li>
+                <li><button class="list-group-item btn btn-outline-primary btn-lg correct option" id="3">20 years old</button></li>
+                <li><button class="list-group-item btn btn-outline-primary btn-lg incorrect option" id="4">22 years old</button></li>
             </ol>
         </div>
-        <div class="container position-absolute top-50 start-50 translate-middle text-center" id="question-container" style="display: none;">
-            <form action="">
-                
+        <div class="container position-absolute top-50 start-50 translate-middle text-center" id="form-container" style="display: none;">
+            <form>
+                <h3 class="form-label" id="formTitle">Enter your initials below to record your high score</h3>
+                <input id="initials" type="text" class="form-control">
+                <div class="form-text">Try again for a better score!</div>
+                <button class="btn btn-lg btn-success my-3" id="recordData">Submit</button>
             </form>
+            
         </div>    
     </main>
         

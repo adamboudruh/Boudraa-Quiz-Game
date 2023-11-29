@@ -65,6 +65,19 @@ body {
     min-height: 100vh; */
 }
 
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#highScores {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+}
+
 main {
     display: flex;
     justify-content: center;

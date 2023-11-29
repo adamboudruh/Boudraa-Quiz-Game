@@ -23,6 +23,20 @@ anyOption.on('click', function () {
     refreshScore(); 
     displayQuestion(questionNum); 
 });
+
+$('#recordData').on('click', function(event){
+    event.preventDefault();
+    var newScore = $('<li>');
+    var scoreString = $('#initials').val() + " scored " + score + "!";
+    console.log(scoreString);
+    newScore.text(scoreString);
+    $('#scoreList').append(newScore);
+    score = 0;
+    questionNum = 0;
+    correctID = 3;
+    $('#welcome-page').attr('style', 'display: block');
+    $('#form-container').attr('style', 'display: none');
+})
            
 
 function displayQuestion(questionNum) {
@@ -58,6 +72,11 @@ function displayQuestion(questionNum) {
             $('#4').text("Ryan");
         correctID = 4;
     }
+    if(questionNum == 5){
+        $('#form-container').attr('style', 'display: block');
+        $('#question-container').attr('style', 'display: none');        
+    }
+
 }
 
 
