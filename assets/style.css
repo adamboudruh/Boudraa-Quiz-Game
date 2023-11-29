@@ -65,19 +65,20 @@ body {
     min-height: 100vh; */
 }
 
-#question-container {
-    padding-left: 500px;
-    padding-right: 500px;
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
     text-decoration: underline;
-    text-align: left;
+    text-align: center;
     padding: 20px;
 }
 
-#question-container ul {
-    list-style: none;
+#question-container {
+    max-width: 400px;
 }
 
 #question-container button {
